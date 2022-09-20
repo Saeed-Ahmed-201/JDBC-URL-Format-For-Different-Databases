@@ -1,0 +1,52 @@
+1 # JDBC URL Formats for Oracle
+    Oracle database systems are widely used in enterprise Java applications. Before we can take a look at the format of the JDBC URL to connect Oracle databases, we should first make sure the Oracle Thin database driver is in our classpath.
+
+- MAVEN DEPENDENCY
+     <dependency>
+       <groupId>com.oracle.database.jdbc</groupId>
+       <artifactId>ojdbc8</artifactId>
+       <version>21.1.0.0</version>
+    </dependency>
+
+- JDBC Connection URL
+     jdbc:oracle:thin:[<user>/<password>]@<host>[:<port>]:<SID>
+
+2 # JDBC URL Formats for MySQL
+
+- MAVEN DEPENDENCY
+	<dependency>
+    	  <groupId>mysql</groupId>
+    	   <artifactId>mysql-connector-java</artifactId>
+    	   <version>8.0.22</version>
+	</dependency>
+
+- JDBC Connection URL
+     jdbc:mysql://myhost1:3306/db_name?prop1=value1&prop2=value2
+     jdbc:mysql://myhost1:3306/db_name?user=root&password=mypass
+
+3 # JDBC URL Format for Microsoft SQL Server
+    Microsoft SQL Server is another popular database system. To connect an MS SQL Server database from a Java application, we need to add the mssql-jdbc dependency into our pom.xml
+  
+-MAVEN
+	<dependency>
+    	   <groupId>com.microsoft.sqlserver</groupId>
+    	   <artifactId>mssql-jdbc</artifactId>
+    	   <version>8.4.1.jre11</version>
+	</dependency>
+
+- JDBC Connetion URL
+  jdbc:sqlserver://[serverName[\instanceName][:portNumber]][;property=value[;property=value]]
+
+4 # JDBC URL Format for PostgreSQL
+    PostgreSQL is a popular, open-source database system. To work with PostgreSQL, the JDBC driver postgresql should be added as a dependency in our pom.xml:
+  
+-MAVEN
+	<dependency>
+          <groupId>org.postgresql</groupId>
+          <artifactId>postgresql</artifactId>
+          <version>42.2.18</version>
+	</dependency>
+
+-JDBC Connection URL
+      jdbc:postgresql://host:port/database?properties
+
